@@ -1,0 +1,161 @@
+/* =========================================================
+   TemiSec | About Stylesheet
+   Cohesive with index but more editorial/storytelling vibe
+   ========================================================= */
+
+/* Brand tokens */
+:root {
+  --primary: 164 100% 50%; /* Mint #00E3A2 */
+  --accent: 266 100% 67%; /* Cyber Violet */
+  --container: 1120px;
+  --radius: 14px;
+  --nav-h: 64px;
+  --fs-hero: clamp(2rem, 3vw + 1rem, 3.2rem);
+
+  --shadow-sm: 0 2px 10px hsl(0 0% 0% / .08);
+  --shadow-md: 0 8px 30px hsl(0 0% 0% / .12);
+
+  --grad-cta: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: 222 21% 8%;
+  --surface: 222 20% 10%;
+  --text: 210 40% 96%;
+  --muted: 214 14% 72%;
+  --border: 220 16% 20%;
+}
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: 210 40% 98%;
+  --surface: 0 0% 100%;
+  --text: 223 47% 12%;
+  --muted: 222 10% 45%;
+  --border: 210 24% 88%;
+}
+
+/* Reset + Base */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: hsl(var(--text));
+  background: hsl(var(--bg));
+  line-height: 1.65;
+}
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0 .6em;
+  font-weight: 700;
+}
+
+h1 { font-size: var(--fs-hero); font-weight: 800; }
+.kicker {
+  text-transform: uppercase;
+  font-size: .85rem;
+  letter-spacing: .15em;
+  color: hsl(var(--muted));
+  display: block;
+  margin-bottom: .6em;
+}
+.lead { font-size: 1.15rem; color: hsl(var(--muted)); }
+
+/* Layout */
+.container { width: min(var(--container), 92%); margin-inline: auto; }
+.section { padding-block: 3rem; }
+
+/* Navbar (reuse vibe of index) */
+.navbar {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  background: hsl(var(--bg) / .7);
+  border-bottom: 1px solid hsl(var(--border));
+}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; height: var(--nav-h);}
+.brand { display:flex; gap:.6rem; align-items:center; font-weight:800; }
+.logo {
+  width:40px;height:40px; display:grid; place-items:center;
+  border-radius:10px;
+  font-weight:800;
+  background:linear-gradient(135deg,hsl(var(--primary) / .2),hsl(var(--accent) / .2));
+}
+.nav-links { display:flex; gap:1.2rem; }
+.nav-links a { color:hsl(var(--muted)); position:relative; font-weight:600; }
+.nav-links a:hover { color:hsl(var(--text)) }
+
+/* Cards */
+.card {
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding:1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition:.2s ease border-color, .2s ease transform;
+}
+.card:hover {
+  border-color: hsl(var(--primary)/.5);
+  transform:translateY(-2px);
+}
+
+/* Grid */
+.grid { display:grid; gap:1.2rem; }
+.grid-2 { grid-template-columns: repeat(2,1fr); }
+.grid-3 { grid-template-columns: repeat(3,1fr); }
+@media(max-width:800px){ .grid-2,.grid-3{ grid-template-columns:1fr; } }
+
+/* Chips */
+.chip {
+  display:inline-block;
+  padding:.35rem .7rem;
+  font-size:.85rem;
+  font-weight:600;
+  border-radius:999px;
+  border:1px solid hsl(var(--border));
+  margin:.2rem;
+  background:hsl(var(--surface)/.9);
+}
+
+/* Contact list */
+.contact-list { display:flex; flex-direction:column; gap:1rem; }
+.contact-item { display:grid; grid-template-columns: 120px 1fr; gap:.5rem; }
+.contact-item i { color:hsl(var(--primary)); }
+
+/* Values list */
+ul.muted { list-style:square; padding-left:1.2rem; color:hsl(var(--muted)); }
+ul.muted li { margin:.4rem 0; }
+
+/* Timeline */
+.timeline {
+  display:grid; gap:1.5rem;
+  border-left:3px solid hsl(var(--border));
+  margin-left:1rem; padding-left:1.2rem;
+}
+.t-item { position:relative; }
+.t-item::before {
+  content:''; position:absolute;
+  left:-1.75rem; top:.3rem;
+  width:14px;height:14px;
+  border-radius:50%;
+  background:hsl(var(--primary));
+  box-shadow:0 0 0 3px hsl(var(--primary)/.3);
+}
+.t-item h4 { margin-bottom:.3rem; font-weight:700; }
+
+/* Footer */
+footer {
+  margin-top:3rem;
+  background:hsl(var(--surface));
+  border-top:1px solid hsl(var(--border));
+  padding-block:1.5rem;
+}
+.footer-grid {
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:1rem; font-size:.95rem;
+  color:hsl(var(--muted));
+}
+.footer-links { display:flex; gap:1rem; 

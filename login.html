@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Login — TemiSec (Demo)" />
+  <meta name="theme-color" content="#00e3a2" />
+  <title>TemiSec | Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><div class="logo">TS</div><span>TemiSec</span></a>
+      <div class="nav-actions" style="display:flex;gap:10px;align-items:center">
+        <button class="theme-toggle" aria-label="Toggle theme"><i class="ri-contrast-2-line"></i></button>
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="ri-menu-line"></i> Menu</button>
+      </div>
+      <div class="nav-links">
+        <a href="about.html">Home</a>
+        <a href="contact.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
+    <section class="section reveal" style="max-width:680px;margin:0 auto">
+      <span class="kicker mono">Member Area</span>
+      <h1>Login</h1>
+      <p class="lead">This is a demo login (frontend only). For a real system, we’d connect to a backend with secure authentication.</p>
+
+      <form id="login-form" class="form card">
+        <label>
+          <div class="muted">Email</div>
+          <input id="email" class="input" type="email" placeholder="temi@example.com" required />
+        </label>
+        <label>
+          <div class="muted">Password</div>
+          <div class="password-row">
+            <input id="password" class="input" type="password" placeholder="At least 8 characters" required />
+            <button id="showPwd" type="button" class="btn btn-small">Show</button>
+          </div>
+        </label>
+        <div class="strength"><span id="strength-bar"></span></div>
+        <label style="display:flex;align-items:center;gap:8px">
+          <input id="remember" type="checkbox" /> Remember me
+        </label>
+        <button class="btn btn-primary" type="submit"><i class="ri-login-box-line"></i> Login</button>
+        <p class="help">Tip: You can log in with any email and an 8+ character password (demo).</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> TemiSec</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

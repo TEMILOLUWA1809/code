@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Contact — TemiSec" />
+  <meta name="theme-color" content="#00e3a2" />
+  <title>TemiSec | Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="new.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><div class="logo">TS</div><span>TemiSec</span></a>
+      <div class="nav-actions" style="display:flex;gap:10px;align-items:center">
+        <button class="theme-toggle" aria-label="Toggle theme"><i class="ri-contrast-2-line"></i></button>
+        <button class="menu-toggle" aria-label="Toggle menu"><i class="ri-menu-line"></i> Menu</button>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
+    <section class="section reveal">
+      <span class="kicker mono">Get in Touch</span>
+      <h1>Contact</h1>
+      <p class="lead">Whether it’s mentorship, collaboration, or advice — I’m happy to connect. You can use the form or reach me directly.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Send a message</h3>
+          <form id="contact-form" class="form" novalidate>
+            <div class="input-row">
+              <input id="c-name" class="input" placeholder="Your name" required />
+              <input id="c-email" type="email" class="input" placeholder="Your email" required />
+            </div>
+            <textarea id="c-message" class="input" placeholder="How can I help?" rows="6" required></textarea>
+            <button class="btn btn-primary" type="submit"><i class="ri-send-plane-fill"></i> Send</button>
+            <p class="help">This uses your email app to send — no data is stored on this site.</p>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Direct contact</h3>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>
+                <div class="muted">Email</div>
+                <a href="mailto:olofinladetemi18@gmail.com">olofinladetemi18@gmail.com</a>
+              </div>
+              <button class="copy-btn" data-copy="olofinladetemi18@gmail.com">Copy</button>
+            </div>
+            <div class="contact-item">
+              <div>
+                <div class="muted">Phone</div>
+                <a href="tel:+2348065437293">+234 806 543 7293</a>
+              </div>
+              <button class="copy-btn" data-copy="+2348065437293">Copy</button>
+            </div>
+            <div class="contact-item">
+              <div>
+                <div class="muted">LinkedIn</div>
+                <a target="_blank" rel="noopener" href="https://linkedin.com/in/olofinladetemiloluuwa">linkedin.com/in/olofinladetemiloluuwa</a>
+              </div>
+              <button class="copy-btn" data-copy="https://linkedin.com/in/olofinladetemiloluuwa">Copy</button>
+            </div>
+          </div>
+          <div class="hr"></div>
+          <p class="help">Response time: within 1–2 days. Thanks for reaching out!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> TemiSec</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
